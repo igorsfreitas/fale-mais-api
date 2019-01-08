@@ -2,16 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Roles', [
+    return queryInterface.bulkInsert('Origins', [
       {
-        name: 'Consumidor',
-        description: 'Perfil genérico para todos os clientes da aplicação mobile',
+        code: '011',
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
       },
       {
-        name: 'Loja',
-        description: '',
+        code: '018',
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
       }
@@ -19,6 +17,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Roles', null, {});
+    return queryInterface.bulkDelete('Origins', null, {});
   }
 };
