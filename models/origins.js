@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     code: DataTypes.STRING
   }, {});
   Origins.associate = function(models) {
-    // associations can be defined here
+    models.Origins.hasMany(models.Destiny, {foreignKey: 'origin_id'});
   };
   return Origins;
 };

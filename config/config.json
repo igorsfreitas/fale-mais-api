@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "igorsfreitas",
+    "username": "postgres",
     "password": "isf@isf11301",
     "database": "fale-mais",
     "host": "127.0.0.1",
@@ -9,7 +9,7 @@
     "configName": "secret"
   },
   "test": {
-    "username": "igorsfreitas",
+    "username": "postgres",
     "password": "isf@isf11301",
     "database": "fale-mais-test",
     "host": "127.0.0.1",
@@ -18,7 +18,7 @@
     "configName": "secret"
   },
   "production": {
-    "username": "igorsfreitas",
+    "username": "postgres",
     "password": "isf@isf11301",
     "database": "fale-mais",
     "host": "127.0.0.1",
