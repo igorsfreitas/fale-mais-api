@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "igorsfreitas",
+    "password": "isf@isf11301",
+    "database": "fale-mais",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": "5432",
+    "configName": "secret"
+  },
+  "test": {
+    "username": "igorsfreitas",
+    "password": "isf@isf11301",
+    "database": "fale-mais-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": "5432",
+    "configName": "secret"
+  },
+  "production": {
+    "username": "igorsfreitas",
+    "password": "isf@isf11301",
+    "database": "fale-mais",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": "5432",
+    "configName": "secret"
+  }
+}

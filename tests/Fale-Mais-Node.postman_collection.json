@@ -1,0 +1,1231 @@
+{
+	"info": {
+		"_postman_id": "58ee2ee3-041c-41e8-b15c-cb4b96525f08",
+		"name": "PDV-Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "abf5e72a-dc18-4c7a-9fef-0ba9a8234cca",
+			"name": "Auth",
+			"item": [
+				{
+					"_postman_id": "7c2626f1-b587-43cd-8f75-6521fdd8b3ae",
+					"name": "Autenticar sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "db61f8fe-546a-4771-b212-2f97a917d97e",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set(\"authToken\", jsonData.token);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "igorfreitas1992@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "e638f198-db4e-4317-985e-d56a94af12fa",
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MCwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJpYXQiOjE1MzI2NDQyNzYsImV4cCI6MTUzMjY1MTQ3Nn0.L9rwvAKy8Vzql37TvkedwVfeuAsm2wIHr3ZdhtE7CX0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "691d2ecf-4d99-477c-af12-495fd66427d6",
+			"name": "Users",
+			"item": [
+				{
+					"_postman_id": "d48c485e-ee94-4446-8b1b-8167e1cbd6c0",
+					"name": "List Users",
+					"item": [
+						{
+							"_postman_id": "6c71f911-d345-4df2-a351-e03a6c93a11e",
+							"name": "Listar Usuários",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzQzNDE1MCwiZXhwIjoxNTMzNDQxMzUwfQ.SkcvRRSUK58E5onOUY44gHO-DmCrxnRoLmbKrvAEH34"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "3f6a6310-c6bd-435d-9eab-6adec7df4f65",
+					"name": "Delete User",
+					"item": [
+						{
+							"_postman_id": "83d2232c-0a2c-4201-8fe3-8514ce931f79",
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MCwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJpYXQiOjE1MzI2NTQzNjksImV4cCI6MTUzMjY2MTU2OX0.L0uIpTg80wunfGdT1tsoHtUtxuxWnbCv4um3YF2kKD8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "24495085-cd83-47d4-b269-91d3d17b3bbc",
+					"name": "Create User",
+					"item": [
+						{
+							"_postman_id": "085e9bc6-67c7-418f-9fe8-27dc2103e3ea",
+							"name": "Criar Usuário",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MCwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJpYXQiOjE1MzI2NDQyNzYsImV4cCI6MTUzMjY1MTQ3Nn0.L9rwvAKy8Vzql37TvkedwVfeuAsm2wIHr3ZdhtE7CX0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userName",
+											"value": "usertest",
+											"type": "text"
+										},
+										{
+											"key": "cpf",
+											"value": "09787445434",
+											"type": "text"
+										},
+										{
+											"key": "firstName",
+											"value": "Maria",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "Teste",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "maria@teste.com",
+											"type": "text"
+										},
+										{
+											"key": "birthdate",
+											"value": "1954-12-26 19:16:25.081109",
+											"type": "text"
+										},
+										{
+											"key": "zipcode",
+											"value": "52050390",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Rua amapa",
+											"type": "text"
+										},
+										{
+											"key": "streetNumber",
+											"value": "51",
+											"type": "text"
+										},
+										{
+											"key": "complement",
+											"value": "apt 301",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Recife",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "Pernambuco",
+											"type": "text"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "81982282974",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"type": "text"
+										},
+										{
+											"key": "passwordConfirm",
+											"value": "teste",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "c112c415-a094-43d8-a446-ba69d90ebfa0",
+					"name": "Edit User",
+					"item": [
+						{
+							"_postman_id": "69ef07e4-b1d5-41be-bc98-2de26f431810",
+							"name": "Editar Usuário",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJpYXQiOjE1MzMyNjMzNzUsImV4cCI6MTUzMzI3MDU3NX0.mrQ1nVSzx9XaBBTAovzJdYHH9BQgBR-Rk9OX6wIx6Os"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "maria@teste.com",
+											"type": "text"
+										},
+										{
+											"key": "zipcode",
+											"value": "52050390",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Rua amapa",
+											"type": "text"
+										},
+										{
+											"key": "streetNumber",
+											"value": "51",
+											"type": "text"
+										},
+										{
+											"key": "complement",
+											"value": "apt 301",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Recife",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "Pernambuco",
+											"type": "text"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "81982282974",
+											"type": "text"
+										},
+										{
+											"key": "roleId",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe2f7b12-6fd7-42fe-b106-085c6a02b15c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a5ccc1c3-b622-4e2f-8bfb-fdb3454d5b1b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "34a33536-ecff-46d0-aede-b9483d0b46a8",
+					"name": "Edit User Password",
+					"item": [
+						{
+							"_postman_id": "c054fdcf-aac5-4fb4-a752-ce10e23c449d",
+							"name": "Editar Usuário",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzI2NDk4MywiZXhwIjoxNTMzMjcyMTgzfQ.JgRIBBWle2R0m3Z39q6v4FNCu31oWhgnu335LsvUjvU"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "newPassword",
+											"value": "teste2",
+											"type": "text"
+										},
+										{
+											"key": "passwordConfirm",
+											"value": "teste2",
+											"type": "text"
+										},
+										{
+											"key": "oldPassword",
+											"value": "teste",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/passwordEdit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"passwordEdit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe2f7b12-6fd7-42fe-b106-085c6a02b15c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a5ccc1c3-b622-4e2f-8bfb-fdb3454d5b1b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "02e391bb-82b9-4d81-9b30-38abf11d26b1",
+			"name": "Categories",
+			"item": [
+				{
+					"_postman_id": "72847554-c059-4613-8c95-0578fd468413",
+					"name": "Create Category",
+					"item": [
+						{
+							"_postman_id": "0c1bebd7-efb2-44bc-a450-a3a76a2cdf57",
+							"name": "Criar Categoria",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzQ4ODQwOSwiZXhwIjoxNTMzNDk1NjA5fQ.WOB4BmFfPIx_aSrcd8hF_x6TjY1hvV36eVZbIVcqzPQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "cathegory",
+											"value": "Lingerie",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "bfe86bae-0156-44f4-9bab-a0b8cb198c64",
+					"name": "List Categories",
+					"item": [
+						{
+							"_postman_id": "dfd9d0c8-99d6-437e-95fe-5e7483d8f2e7",
+							"name": "Listar Categorias",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzQ4ODQwOSwiZXhwIjoxNTMzNDk1NjA5fQ.WOB4BmFfPIx_aSrcd8hF_x6TjY1hvV36eVZbIVcqzPQ"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "9cf9d596-d228-4eea-b5d8-3edb7c8775b9",
+					"name": "Edit Category",
+					"item": [
+						{
+							"_postman_id": "35ff37b7-92d5-4e6e-bf1f-c6029764b05e",
+							"name": "Editar Categoria",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzQ4ODQwOSwiZXhwIjoxNTMzNDk1NjA5fQ.WOB4BmFfPIx_aSrcd8hF_x6TjY1hvV36eVZbIVcqzPQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "cathegory",
+											"value": "Lingerie",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe2f7b12-6fd7-42fe-b106-085c6a02b15c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a5ccc1c3-b622-4e2f-8bfb-fdb3454d5b1b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "0ae5d9fb-6cb2-4810-987d-b93f4c1da894",
+					"name": "Delete Category",
+					"item": [
+						{
+							"_postman_id": "e7d7e945-6f84-417c-9a2a-6b7dd7667942",
+							"name": "Delete Categoria",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzQ4ODQwOSwiZXhwIjoxNTMzNDk1NjA5fQ.WOB4BmFfPIx_aSrcd8hF_x6TjY1hvV36eVZbIVcqzPQ"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/categories/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "8487aea4-1dab-402e-a4d7-5de214bac919",
+			"name": "Address",
+			"item": [
+				{
+					"_postman_id": "571e7232-c6bb-45ab-bd67-6ff63d558559",
+					"name": "Get Address",
+					"item": [
+						{
+							"_postman_id": "b854e8fc-3d37-472f-b05a-3e25af8395d2",
+							"name": "Buscar Endereço",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmUiOnRydWUsIm5hbWUiOiJJZ29yRnJlaXRhcyIsInJvbGVJZCI6MSwidXNlck5hbWUiOiJpZ29yc2ZyZWl0YXMiLCJ1c2VySWQiOjEsImlhdCI6MTUzMzU5ODEyMiwiZXhwIjoxNTMzNjA1MzIyfQ.bTy4UA7MIwsjGoLIjGJxfQYxI0Lu0wi6H-IV1Dwwe30"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/address?cep=52050390",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"address"
+									],
+									"query": [
+										{
+											"key": "cep",
+											"value": "52050390"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "98755f99-fe6d-48f1-ab6b-7289806344cc",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "745e6863-d514-481e-84b7-0fe6eafd47c3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "981488b7-6a80-45c5-a4d4-975c099a582c",
+			"name": "Suppliers",
+			"item": [
+				{
+					"_postman_id": "f1c4864c-8c36-432a-9d1b-1e068596bc2b",
+					"name": "Create Supplier",
+					"item": [
+						{
+							"_postman_id": "0bf94445-eec3-410c-a396-856f9798dea8",
+							"name": "Criar Fornecedor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "city",
+											"value": "Recife",
+											"type": "text"
+										},
+										{
+											"key": "supplier",
+											"value": "Fornecedor 2",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Rua amapá",
+											"type": "text"
+										},
+										{
+											"key": "streetNumber",
+											"value": "n 51",
+											"type": "text"
+										},
+										{
+											"key": "complement",
+											"value": "apt 301",
+											"type": "text"
+										},
+										{
+											"key": "neighbord",
+											"value": "Aflitos",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "Pernambuco",
+											"type": "text"
+										},
+										{
+											"key": "zipcode",
+											"value": "52050390",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Brasil",
+											"type": "text"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "1111111111",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "teste2@teste.com",
+											"type": "text"
+										},
+										{
+											"key": "insc",
+											"value": "teste insc2",
+											"type": "text"
+										},
+										{
+											"key": "cnpj",
+											"value": "000.000.000/0001-02",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/suppliers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"suppliers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "c062f6cd-161d-4e71-b586-9af13164203c",
+					"name": "List Suppliers",
+					"item": [
+						{
+							"_postman_id": "612408a2-2888-4bca-8aff-938a85bdd997",
+							"name": "Listar Fornecedores",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/suppliers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"suppliers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "7c80a3d2-cde3-4d13-962f-b143fdc2ab73",
+					"name": "Edit Supplier",
+					"item": [
+						{
+							"_postman_id": "4f323ca2-8476-4838-831d-2f09d4e02d42",
+							"name": "Editar Fornecedor",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "cnpj",
+											"value": "111.111.111/0001-00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/supplier/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"supplier",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe2f7b12-6fd7-42fe-b106-085c6a02b15c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a5ccc1c3-b622-4e2f-8bfb-fdb3454d5b1b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "57a1d644-a3ad-407c-8d0e-21e5fbfc7706",
+					"name": "Delete Supplier",
+					"item": [
+						{
+							"_postman_id": "1c2a4072-6f88-4c59-a819-2d9715b4e3c3",
+							"name": "Delete Fornecedor",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/supplier/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"supplier",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "ba024819-d716-4a23-ad7f-9c4a94f89cd1",
+			"name": "Brands",
+			"item": [
+				{
+					"_postman_id": "90a1b418-ad85-48e8-8948-cf06f7066c58",
+					"name": "Create Brands",
+					"item": [
+						{
+							"_postman_id": "b1de66ab-8929-4f8e-9db4-189a5d7181c6",
+							"name": "Criar Marca",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"sessionValue": {
+												"0": {}
+											},
+											"type": "file"
+										},
+										{
+											"key": "brandName",
+											"value": "Farms",
+											"type": "text"
+										},
+										{
+											"key": "origin",
+											"value": "Brasil",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/brands",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"brands"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "1795b4a7-6c59-450a-9e87-f4458e76a56d",
+					"name": "List Brands",
+					"item": [
+						{
+							"_postman_id": "3b141ad2-6f0a-489f-bda7-e6285cdcf710",
+							"name": "Listar Marcas",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/brands",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"brands"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "ee8678f5-7772-4bc0-a494-bfd3911b2fb2",
+					"name": "Edit Brand",
+					"item": [
+						{
+							"_postman_id": "e7806789-3647-460a-acf6-deabe84e39c1",
+							"name": "Editar Marca",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brandName",
+											"value": "Farm",
+											"type": "text"
+										},
+										{
+											"key": "origin",
+											"value": "Brasil",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"sessionValue": {
+												"0": {}
+											},
+											"type": "file"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/brand/7",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"brand",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe2f7b12-6fd7-42fe-b106-085c6a02b15c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "a5ccc1c3-b622-4e2f-8bfb-fdb3454d5b1b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "3420d4fa-d5fd-44d2-9d48-b8cb5af95cdd",
+					"name": "Delete Supplier",
+					"item": [
+						{
+							"_postman_id": "e4311288-f64d-4fb1-9b95-f310cd58bbe7",
+							"name": "Delete Marca",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{authToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/api/brand/7",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"brand",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
