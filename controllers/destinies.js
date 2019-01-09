@@ -6,7 +6,8 @@ module.exports = app => {
         let destiniesFilled = destinies.map(destiny=>{
             return {
                 id: destiny.id,
-                destiny: destiny.code
+                destiny: destiny.code,
+                valueInCents: destiny.value_in_cents
             }
         })
         return destiniesFilled
