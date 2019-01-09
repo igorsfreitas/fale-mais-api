@@ -9,6 +9,16 @@ module.exports = {
         updatedAt: Sequelize.fn('now')
       },
       {
+        code: '016',
+        createdAt: Sequelize.fn('now'),
+        updatedAt: Sequelize.fn('now')
+      },
+      {
+        code: '017',
+        createdAt: Sequelize.fn('now'),
+        updatedAt: Sequelize.fn('now')
+      },
+      {
         code: '018',
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
