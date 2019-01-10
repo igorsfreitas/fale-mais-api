@@ -1,27 +1,27 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "isf@isf11301",
-    "database": "fale-mais",
-    "host": "127.0.0.1",
+    "username": "falemais",
+    "password": "falemais12345",
+    "database": "falemais",
+    "host": "falemais.car8g7sqcqo8.us-east-2.rds.amazonaws.com",
     "dialect": "postgres",
     "port": "5432",
     "configName": "secret"
   },
   "test": {
-    "username": "postgres",
-    "password": "isf@isf11301",
+    "username": "falemais",
+    "password": "falemais12345",
     "database": "fale-mais-test",
-    "host": "127.0.0.1",
+    "host": "falemais.car8g7sqcqo8.us-east-2.rds.amazonaws.com",
     "dialect": "postgres",
     "port": "5432",
     "configName": "secret"
   },
   "production": {
-    "username": "postgres",
-    "password": "isf@isf11301",
-    "database": "fale-mais",
-    "host": "127.0.0.1",
+    "username": "falemais",
+    "password": "falemais12345",
+    "database": "falemais",
+    "host": "falemais.car8g7sqcqo8.us-east-2.rds.amazonaws.com",
     "dialect": "postgres",
     "port": "5432",
     "configName": "secret"
